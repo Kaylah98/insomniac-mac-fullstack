@@ -1,0 +1,15 @@
+#footer {
+    background-color: black;
+    color: white;
+    height: 250px;
+    width: 100%;
+    position:absolute;
+    bottom: 0px;
+   
+}
+
+#footer p {
+    font-size: 25px;
+    position: relative;
+    left: 10px;
+}

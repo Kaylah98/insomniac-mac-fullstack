@@ -1,0 +1,126 @@
+#order-header {
+    position: absolute;
+    left: 750px;
+    top: 120px;
+}
+#order-page {
+    background-color: rgba(255, 255, 255, 0.4);
+    position: relative;
+    top: 180px;
+    left: 150px;
+    width: 1300px;
+    height: 700px;
+    overflow-x: hidden; 
+    overflow-y: scroll; 
+    
+}
+
+#order-info {
+    position: relative;
+    left: 550px;
+    top: -20px;
+    
+}
+
+#food-box {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 20px;
+    gap: 40px;
+   
+}
+
+
+
+#total-box {
+    
+    position: absolute;
+    bottom: 30px;
+    left: 20px;
+    
+}
+
+img {
+
+    width: 200px;
+    height: 100px;
+    column-gap: 5;
+}
+
+#remove-button {
+    background-color: black;
+    color: white;
+    width: 100px;
+    height: 50px;
+    border-radius: 20%;
+}
+
+#order-box {
+    background-color: rgba(255, 255, 255, 0.4);
+    position: relative;
+    top: 250px;
+    left: 350px;
+    width: 750px;
+    height: 200px;
+}
+
+#order-box #order-info {
+    
+    position: absolute;
+    left: 300px;
+    top: 20px;
+}
+
+#order-submit #order-box label {
+    position: absolute;
+    left: -180px;
+    
+}
+
+#order-submit #order-box button {
+    position: absolute;
+    left: 80px;
+    top: 130px;
+    border-radius: 10%;
+    color: white;
+    background-color: black;
+    
+}
+
+#total-box p {
+    font-weight: bold;
+}
+
+#arrival-p {
+    font-weight: bold;
+    font-size: 24px;
+    text-align: end;
+}
+
+#stop-order {
+    background-color: black;
+    color: red;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 110px;
+    height: 70px;
+    position: relative;
+    top: -60px;
+    left: 600px;
+}
+
+#order-form {
+    position: relative;
+}
+
+#notification-box {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 200px;
+    background-color: black;
+    color: white;
+    width: 100%;
+
+}

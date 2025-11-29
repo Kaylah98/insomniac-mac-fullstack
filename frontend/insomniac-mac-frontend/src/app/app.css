@@ -1,0 +1,38 @@
+#mascot {
+   width: 500px;
+   height: 500px;
+   position: absolute;
+   top: 30%;
+   right: 35%;
+}
+
+#navbar {
+    
+    
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 50%;
+    height: 90px;
+    flex-wrap: wrap;
+    display: flex;
+    float: right;
+    gap: 20%;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+#navbar a {
+    
+    color: white;
+    font-size: 20px;
+     
+}
+
+main {
+    flex-grow: 1;
+}
+
+
+

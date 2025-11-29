@@ -1,0 +1,19 @@
+#about-p-header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+#about-p {
+    text-align: center;
+    font-weight: bold;
+}
+#top-part {
+    background-color: white;
+    height: 600px;
+    opacity: 0.7;
+    width: 60%;
+    position: relative;
+    left: 350px;
+    top: 200px;
+}

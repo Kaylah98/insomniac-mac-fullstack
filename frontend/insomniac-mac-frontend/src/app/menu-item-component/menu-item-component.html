@@ -1,0 +1,25 @@
+<img id="macImg" [src]="menuItemService.menuObj().foodPic">
+
+@if (alertService.visible()){
+    <div id="notification-menu-item">{{alertService.alerts()[0].message}}</div>
+}
+
+<div id="menu-container">
+    <header id="food-name">{{menuItemService.menuObj().foodName}}</header>
+    <header id="food-price">{{menuItemService.menuObj().foodPrice | currency: 'USD'}}</header>
+    <header id="food-desc">{{menuItemService.menuObj().foodDesc}}</header>
+
+
+
+    @if (cartService.isOrdering()){
+
+    <div id="quantity-div">
+        <label>Quantity: </label>
+        <input id="quant" name="quantity" type="number" min="1" max="10" [(ngModel)]="foodData.quantity" />
+    </div>
+    <button (click)="addToCart()">{{cartService.beginOrder()}}</button>
+    }
+    @else {
+    <button (click)="beginOrder()">{{cartService.beginOrder()}}</button>
+    }
+</div>

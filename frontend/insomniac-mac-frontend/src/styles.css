@@ -1,0 +1,27 @@
+
+
+html, body {
+  height: 100%; 
+  margin: 0 auto; 
+}
+
+body {
+  min-height: 100vh; 
+  max-width: 100%;
+  background-repeat: no-repeat;
+    background-size: cover;
+  background-image: linear-gradient(to bottom, #FF9500, #FFF170);
+  background-attachment: fixed; 
+}
+
+
+#restaurant-name {
+    display: inline-block;
+    font-weight: 100px;
+    position: relative;
+    margin-left: 50px;
+    margin-top: 25px;
+}
+
+
+

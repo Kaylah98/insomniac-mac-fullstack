@@ -1,0 +1,24 @@
+<h1 id="menu-name">Menu</h1>
+
+@for (row of imageRows; track $index) {
+
+<div class="menu-row" [style.gap]="setGap(100)">
+
+  @for (menuItem of menuItems; track $index; let i = $index) {
+
+  <div [id]="'menuDivId' + i">
+
+    <figure>
+
+      <img [id]="'macImgId' + i" [src]="menuItem.foodPic">
+      <p>{{ menuItem.foodName }}</p>
+      <p>{{ menuItem.foodPrice | currency: 'USD' }}</p>
+      <figcaption>{{ menuItem.foodDesc }}</figcaption>
+      <br>
+      <button (click)="sendMenuItem(menuItem)">More information</button>
+
+    </figure>
+  </div>
+  }
+</div>
+}

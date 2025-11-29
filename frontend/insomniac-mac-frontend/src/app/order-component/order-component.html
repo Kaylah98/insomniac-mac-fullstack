@@ -1,0 +1,52 @@
+<h1 id="order-header">Order</h1>
+@if (alertService.visible()){
+    <div id="notification-box">{{alertService.alerts()[0].message}}</div>
+}
+@if (cartService.isOrdering() === true){
+<button id="stop-order" (click)="stopOrdering()">Stop Order</button>
+}
+<div id="order-page">
+
+    @for (food of cartService.foodCart().foodCart; track food.id) {
+
+    <div id="food-box">
+        <img src={{food.foodPic}} />
+        <p id="food-name">{{food.foodName}}</p>
+        <p id="food-price">{{food.foodPrice | currency: 'USD'}}</p>
+        <input id="food-quantity" type="number" min="1" max="10" [value]="food.quantity"
+            (input)="onQuantityChange($event.target.value, food)">
+        <button id="remove-button" (click)="deleteFoodFromCart(food)">Remove</button>
+    </div>
+    }
+
+    <div id="total-box">
+        <p>Subtotal: {{cartService.foodCart().subtotal | currency: 'USD'}} </p>
+        <p>Tax: 4.3%</p>
+        <p>Total: {{cartService.foodCart().totalCost | currency: 'USD'}}</p>
+    </div>
+
+
+</div>
+@if (cartService.isOrdering()){
+<form id="order-form" #orderForm="ngForm" (ngSubmit)="submitOrder(orderForm, cartService.foodCart())">
+    <div id="order-submit">
+        <div id="order-box">
+            <p id="arrival-p">Pay at time of arrival!</p>
+            <h2 id="order-info">Order Information <br>
+                <label for="firstName">First Name: </label>
+                <input type="text" name="firstName" [(ngModel)]="customer.firstName" maxlength="10" required>
+                <br>
+                <label for="lastName">Last Name: </label>
+                <input type="text" name="lastName" [(ngModel)]="customer.lastName" maxlength="15" required>
+                <br>
+                <label for="phone">Phone Number: </label>
+                <input type="tel" name="phone" [(ngModel)]="customer.phoneNumber" required>
+                <br>
+                <button type="submit">Order</button>
+            </h2>
+
+
+        </div>
+    </div>
+</form>
+}
