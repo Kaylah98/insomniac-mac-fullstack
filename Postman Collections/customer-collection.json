@@ -63,6 +63,28 @@
 				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
 			},
 			"response": []
+		},
+		{
+			"name": "Post Request",
+			"id": "f5f78857-2321-4112-936c-24b792eaa592",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Larry\",\r\n    \"lastName\": \"Smith\",\r\n    \"phoneNumber\": \"000-333-2222\",\r\n    \"order\": {\r\n        \"id\": \"yyttyrr\",\r\n        \"cart\": [\r\n            {\r\n                \"id\": \"rew4\",\r\n                \"foodPic\": \"baconmac.jpg\",\r\n                \"foodName\": \"Bacon Mac\",\r\n                \"foodPrice\": 12.99,\r\n                \"foodDesc\": \"Crispy bacon\",\r\n                \"quantity\": 3\r\n            }\r\n        ]\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/submit-order"
+			},
+			"response": []
 		}
 	]
 }
