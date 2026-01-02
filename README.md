@@ -24,7 +24,3 @@ OS: win32 x64
 @schematics/angular          20.3.5 (cli-only)
 Git version: git version 2.47.1
 
-Known Issues:
-Adding a quantity of 1 mac and cheese and then adding 2 produces a quantity of 4. 
-Planned fix: Refactor the cart state
-
