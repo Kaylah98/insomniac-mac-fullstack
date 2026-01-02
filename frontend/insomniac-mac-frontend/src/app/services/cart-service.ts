@@ -63,34 +63,34 @@ export class CartService {
 
 
     this._foodCart.update(currentCart => {
-      
+
       // turns food set into array for indexing
       const newFoodArr = Array.from(currentCart.foodCart);
       const foodObjIndex = newFoodArr.findIndex(food => food.id === foodData.id);
       const existingFood = newFoodArr[foodObjIndex];
 
-      if (existingFood != null && existingFood.quantity + foodData.quantity > 10){
+      if (existingFood != null && existingFood.quantity + foodData.quantity > 10) {
         this.alertService.fail("Quantity is more than 10. Please add less", 6000);
         return currentCart;
       }
-      let newSet = new Set<FoodData>(currentCart.foodCart);
-      const newCart = new Cart("", newSet, 0.00, 0.00);
+      let newSet: FoodData[];
 
-      // if food object is not found
-      if (foodObjIndex === -1) {
-        newSet.add(foodData);
-      }
       // if food object is found
+      if (foodObjIndex > -1) {
+        newSet = newFoodArr.map((item, index) =>
+          index === foodObjIndex
+            ? { ...item, quantity: item.quantity + foodData.quantity }
+            : item
+        );
+      }
+      // if food object is not found
       else {
-        const updatedFood: FoodData = {
-          ...existingFood,
-          quantity: existingFood.quantity + foodData.quantity
-        }
+        newSet= [...newFoodArr, { ...foodData }];
 
-        newSet.delete(existingFood);
-        newSet.add(updatedFood);
+        
       }
 
+      const newCart = new Cart("", new Set(newSet), 0.00, 0.00);
       newCart.subtotal = this.calculateSubtotal(newCart);
       newCart.totalCost = this.calculateTotal(newCart);
       return newCart;
@@ -101,7 +101,7 @@ export class CartService {
   // changes food quantity on order page
   changeFoodQuantity(quant: number, foodData: FoodData) {
     this._foodCart.update(currentCart => {
-      
+
       // turns food set into array for indexing
       const newFoodArr = Array.from(currentCart.foodCart);
       const foodObjIndex = newFoodArr.findIndex(food => food.id === foodData.id);

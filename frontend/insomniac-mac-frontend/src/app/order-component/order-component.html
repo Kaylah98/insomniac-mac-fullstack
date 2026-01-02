@@ -34,13 +34,13 @@
             <p id="arrival-p">Pay at time of arrival!</p>
             <h2 id="order-info">Order Information <br>
                 <label for="firstName">First Name: </label>
-                <input type="text" name="firstName" [(ngModel)]="customer.firstName" maxlength="10" required>
+                <input type="text" id="firstName" name="firstName" [(ngModel)]="customer.firstName" maxlength="10" required>
                 <br>
                 <label for="lastName">Last Name: </label>
-                <input type="text" name="lastName" [(ngModel)]="customer.lastName" maxlength="15" required>
+                <input type="text" id="lastName" name="lastName" [(ngModel)]="customer.lastName" maxlength="15" required>
                 <br>
                 <label for="phone">Phone Number: </label>
-                <input type="tel" name="phone" [(ngModel)]="customer.phoneNumber" required>
+                <input type="tel" id="phone" name="phone" [(ngModel)]="customer.phoneNumber" required>
                 <br>
                 <button type="submit">Order</button>
             </h2>
